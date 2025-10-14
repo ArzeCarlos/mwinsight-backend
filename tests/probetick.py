@@ -29,7 +29,7 @@ def fetcher_task(stop_event: threading.Event):
         start_monotonic = time.monotonic()
         
         # Se consulta el endpoint para obtener la lista de items
-        response_fetch = FetchData.get_items("http://127.0.0.1:5000/api/v1/items")
+        response_fetch = FetchData.get_items("https://mwinsight-backend.onrender.com/api/v1/items")
         items = ItemMapper.mapItemItemstoItemArray(response_fetch["data"])
         print("Items obtenidos:", items)
 
@@ -96,8 +96,8 @@ def snmpers_task(stop_event: threading.Event):
             data_item = ItemPut(id=item_id, latest_data=value)
             
             # Se actualiza el item y se reporta el metering correspondiente
-            response_put = FetchData.put_item("http://127.0.0.1:5000/api/v1/items/", data=data_item)
-            response_post = FetchData.post_metering("http://127.0.0.1:5000/api/v1/meterings/", data=data_item)
+            response_put = FetchData.put_item("https://mwinsight-backend.onrender.com/api/v1/items/", data=data_item)
+            response_post = FetchData.post_metering("https://mwinsight-backend.onrender.com/api/v1/meterings/", data=data_item)
         
         # Se minimiza la espera para continuar el ciclo sin bloqueos
         time.sleep(0.001)

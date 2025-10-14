@@ -134,7 +134,7 @@ class Snmper(Thread):
                     # data_item = ItemPutWithStatusCode(id=snmp_response['itemid'], status_codes=456)
                     # response_put: Optional[Dict] = FetchData.put_item_status_code(ITEMS_URL, data=data_item)
                     
-                    response_post_snmp_failed: Optional[Dict] =  FetchData.post_snmp_failures('http://127.0.0.1:5000/api/v1/meterings/falla',data)
+                    response_post_snmp_failed: Optional[Dict] =  FetchData.post_snmp_failures('https://mwinsight-backend.onrender.com/api/v1/meterings/falla',data)
                     self.logger.error(
                         f"[Snmper-{self.thread_id}] SNMP error for item {snmp_response['itemid']}: {snmp_response['channel'][0].get('error')}"
                     )

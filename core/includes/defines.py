@@ -12,9 +12,9 @@ and other system-wide settings.
 """
 
 # URL fetch
-ITEMS_URL="http://127.0.0.1:5000/api/v1/items/"
-ITEMS_DATA_URL="http://127.0.0.1:5000/api/v1/items/monitoring"
-METERINGS_URL= "http://127.0.0.1:5000/api/v1/meterings/"
+ITEMS_URL="https://mwinsight-backend.onrender.com/api/v1/items/"
+ITEMS_DATA_URL="https://mwinsight-backend.onrender.com/api/v1/items/monitoring"
+METERINGS_URL= "https://mwinsight-backend.onrender.com/api/v1/meterings/"
 # Available services
 SNMP_FEATURE_STATUS = 'YES'  # Enables or disables SNMP feature
 ICMP_FEATURE_STATUS = 'YES'  # Enables or disables ICMP feature

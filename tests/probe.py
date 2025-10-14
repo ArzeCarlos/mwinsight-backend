@@ -14,7 +14,7 @@ colaresponse= queue.Queue()
 def backup():
     cola = queue.Queue()
     colaresponse= queue.Queue()
-    values=FetchData.get_items("http://127.0.0.1:5000/api/v1/items")
+    values=FetchData.get_items("https://mwinsight-backend.onrender.com/api/v1/items")
     values2=ItemMapper.mapItemItemstoItemArray(values["data"])
     # print(values2)
     for item in values2:
@@ -35,9 +35,9 @@ def backup():
         itemid=int(snmpresponse["itemid"])
         value=snmpresponse["channel"][0]["value"]
         data = ItemPut(id=itemid,latest_data=value)
-        response=FetchData.put_item("http://127.0.0.1:5000/api/v1/items/",data=data)    
+        response=FetchData.put_item("https://mwinsight-backend.onrender.com/api/v1/items/",data=data)    
         print(response)
-        response=FetchData.post_metering("http://127.0.0.1:5000/api/v1/meterings/",data=data)
+        response=FetchData.post_metering("https://mwinsight-backend.onrender.com/api/v1/meterings/",data=data)
 
 def backup2():
     cola= queue.Queue()
@@ -45,7 +45,7 @@ def backup2():
     interval:timedelta=timedelta(days=0,hours=0,seconds=60)
     running=True
     while running:
-        responseFetch=FetchData.get_items("http://127.0.0.1:5000/api/v1/items")
+        responseFetch=FetchData.get_items("https://mwinsight-backend.onrender.com/api/v1/items")
         items=ItemMapper.mapItemItemstoItemArray(responseFetch["data"])
         # minUpdateValue=Helpers.MinUpdateValue(items)        
         minupdateinterval:timedelta=timedelta(days=0,hours=0,seconds=60)
@@ -79,7 +79,7 @@ def fetcher_task(stop_event: threading.Event):
     while not stop_event.is_set():
         min_update_interval = default_interval
 
-        response_fetch = FetchData.get_items("http://127.0.0.1:5000/api/v1/items")
+        response_fetch = FetchData.get_items("https://mwinsight-backend.onrender.com/api/v1/items")
         items = ItemMapper.mapItemItemstoItemArray(response_fetch["data"])
         print("Items obtenidos:", items)
 
@@ -123,8 +123,8 @@ def snmpers_task(stop_event: threading.Event):
             value = snmp_response["channel"][0]["value"]
             data_item = ItemPut(id=item_id, latest_data=value)
             
-            response_put = FetchData.put_item("http://127.0.0.1:5000/api/v1/items/", data=data_item)
-            response_post = FetchData.post_metering("http://127.0.0.1:5000/api/v1/meterings/", data=data_item)
+            response_put = FetchData.put_item("https://mwinsight-backend.onrender.com/api/v1/items/", data=data_item)
+            response_post = FetchData.post_metering("https://mwinsight-backend.onrender.com/api/v1/meterings/", data=data_item)
         
         time.sleep(0.001)
 

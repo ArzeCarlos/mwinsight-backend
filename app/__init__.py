@@ -21,12 +21,10 @@ def run_app():
     # CORS
     CORS(app) 
 
-    # ✅ Obtener la ruta al certificado SSL
     ssl_ca_path = os.getenv("DB_SSL_CA")
     if ssl_ca_path:
         ssl_ca_path = quote_plus(os.path.join(os.getcwd(), ssl_ca_path))  # Codifica y usa ruta absoluta
 
-    # ✅ Configurar la URI de conexión con el certificado
     app.config['SQLALCHEMY_DATABASE_URI'] = (
         f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
         f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
