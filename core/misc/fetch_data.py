@@ -27,7 +27,7 @@ class FetchData(object):
             'host':data["ip"],
             'value_type':data["tipo"],
             'community':data["community"],
-            'port': 1611, ##Esto es 1611 para testing
+            'port': 161, ##Esto es 1611 para testing
             'unit': "°C",
             'multiplication': data["factor_multiplicacion"],
             'division': data["factor_division"],

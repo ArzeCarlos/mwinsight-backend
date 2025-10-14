@@ -22,5 +22,5 @@ def start_core():
 start_core()
 
 if __name__ == "__main__":
-    # Flask escucha en todas las interfaces para Render
-    app.run(host="0.0.0.0", port=5000)
+    # app.run(host="0.0.0.0", port=5000)
+    app.run()
