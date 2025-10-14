@@ -19,15 +19,7 @@ def run_app():
     app = Flask(__name__)
 
     # CORS
-    # CORS(
-    #     app,
-    #     resources={
-    #         r"/api/*": {"origins": "*"},
-    #         r"/login": {"origins": "*"},  
-    #         r"/checkpwd": {"origins": "*"},  
-    #         r"/diagram": {"origins": "*"}  
-    #     }
-    # )    
+    CORS(app) 
 
     # ✅ Obtener la ruta al certificado SSL
     ssl_ca_path = os.getenv("DB_SSL_CA")
