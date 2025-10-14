@@ -1,0 +1,40 @@
+{
+    "name": "123",
+    "links": [
+        {
+            "idSource": "9d2a98b5-7197-46c1-b356-aec634643353",
+            "idTarget": "8db23a3e-9414-40ed-a89f-65b627fd81f5"
+        },
+        {
+            "idSource": "8db23a3e-9414-40ed-a89f-65b627fd81f5",
+            "idTarget": "ba742bf5-a84c-45c5-9cd6-3db6d9436750"
+        },
+        {
+            "idSource": "ba742bf5-a84c-45c5-9cd6-3db6d9436750",
+            "idTarget": "9d2a98b5-7197-46c1-b356-aec634643353"
+        }
+    ],
+    "shapes": [
+        {
+            "id": "9d2a98b5-7197-46c1-b356-aec634643353",
+            "x": 460,
+            "y": 194,
+            "name": "Tuti",
+            "ip": "192.132.123.124"
+        },
+        {
+            "id": "8db23a3e-9414-40ed-a89f-65b627fd81f5",
+            "x": 370,
+            "y": 37,
+            "name": "LLallaguani",
+            "ip": "192.133.213.213"
+        },
+        {
+            "id": "ba742bf5-a84c-45c5-9cd6-3db6d9436750",
+            "x": 96,
+            "y": 82,
+            "name": "Vacas",
+            "ip": "192.123.123.45"
+        }
+    ]
+}
