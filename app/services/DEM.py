@@ -79,7 +79,7 @@ class ElevationProfile(object):
         lon2 =  float(coords['endP']['longitude'])
         # Read file
         # ds = open(r"C:\Users\Admin\Documents\Bolivia_1.tif")
-        ds =open(r"./app/services/cocha.tiff")
+        ds =open(r"./app/services/cocha_2.tif")
         # Ubicar puntos
         p1 = ds.index(lon1, lat1)
         p2 = ds.index(lon2, lat2)
@@ -110,7 +110,7 @@ class ElevationProfile(object):
         }
     @staticmethod
     def get_single_elevation(coords: Dict) -> float:
-        with open("./app/services/cocha.tiff") as ds:
+        with open("./app/services/cocha_2.tif") as ds:
         # with open(r"C:\Users\Admin\Documents\Bolivia_1.tif") as ds:
             # Ubicar puntos
             row, col = ds.index(float(coords['longitude']), float(coords['latitude']))

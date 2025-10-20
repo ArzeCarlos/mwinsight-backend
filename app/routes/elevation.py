@@ -111,7 +111,7 @@ def get_elevation_image():
         if not beginP or not endP:
             return jsonify({"error": "Parámetros beginP y endP son requeridos"}), 400
 
-        dem_path = "./app/services/cocha.tiff"
+        dem_path = "./app/services/cocha_2.tif"
         with rs_open(dem_path) as src:
             min_lon = min(beginP["longitude"], endP["longitude"]) - range_value / 111320
             max_lon = max(beginP["longitude"], endP["longitude"]) + range_value / 111320
